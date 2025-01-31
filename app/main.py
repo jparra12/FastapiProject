@@ -81,7 +81,7 @@ async def create_post(post: Post, db: Session = Depends(get_db)):
 
 
 @app.put("/posts/{id}")
-async def update_post(id: int, post: Post):
+async def update_post(id: int, post: Post, db: Session = Depends(get_db)):
     #cursor.execute("""UPDATE posts SET title= %s, content= %s, published = %s WHERE id=%s returning *""",
     #                (post.title, post.content, post.published, str(id)))
     #updated_post =cursor.fetchone()
